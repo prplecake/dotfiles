@@ -1,0 +1,20 @@
+# Changelog
+
+## Unreleased - post-rewrite
+
+### Added
+
+- Organization - all files-to-symlink shall be appended `.symlink`
+
+### Changed
+
+- No more depences on ruby's rake as we can "install" everything with the
+inlucded bash script.
+
+### Removed
+
+- Rakefile - see "Changed" above
+
+## [pre-rewrite-2019-05-03]
+
+[pre-rewrite-2019-05-03]: https://git.sr.ht/~mjorgensen/dotfiles/refs/pre-rewrite-2019-05-03
