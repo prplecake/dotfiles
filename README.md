@@ -25,7 +25,7 @@ The shell script will ask what to do if the destination file already
 exists. You can either overwrite it, skip it, or back it up. You'd also
 have the option to overwrite all, skip all, or back all up.
 
-The dotfiles will be symlinks, e.g. `~/*/zshrc.symlink` will be
+The dotfiles will be symlinks, e.g. `~/zsh/zshrc.symlink` will be
 symlinked to `~/.zshrc`.
 
 ## Currently Installed Submodules
