@@ -96,7 +96,7 @@ eval $(thefuck --alias)
 export GPG_TTY=$(tty)
 export LESS="--no-init --quit-if-one-screen"
 
-if [ -d "~/.secrets" ]; then
+if [ -d "$HOME/.secrets" ]; then
     source ~/.secrets/env
 fi
 
