@@ -3,6 +3,7 @@
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
 
+
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
@@ -12,23 +13,7 @@ set -e
 
 echo ""
 
-info () {
-  printf "\r [ \033[00;34m..\033[0m ] $1\n"
-}
-
-user () {
-  printf "\r [ \033[0;33m??\033[0m ] $1\n"
-}
-
-success () {
-  printf "\r\033[2K [ \033[00;32mOK\033[0m ] $1\n"
-}
-
-fail () {
-  printf "\r\033[2K [\033[0;31mFAIL\033[0m] $1\n"
-  echo ''
-  exit
-}
+source scripts/_helpers
 
 link_file () {
   local src=$1 dst=$2
@@ -122,8 +107,7 @@ detect_system () {
   elif [ "$(uname)" == "Linux" ]; then
     info "sourcing /etc/*release"
     source /etc/*release
-    system=$DISTRIB_ID
-    
+    system=$ID
   fi
 
   success "System detected: $system"
@@ -132,21 +116,58 @@ detect_system () {
 run_setup_scripts () {
   info "installing packages"
 
-  detect_system
+  while true
+  do
+    user "Continue running system-specific scripts? (Y/n)"
+    read -n 1 ans
+
+    case $ans in
+      [yY]* ) break;;
+      [nN]* ) exit;;
+      *) user "Answer please.";;
+    esac
+  done
+
   case "$system" in
     Darwin)
       ;;
-    Ubuntu)
+    ubuntu)
       info "calling another script"
       info "$(pwd)"
       scripts/setup_scripts/ubuntu
       info "other script finished"
       ;;
-    *)
+    debian)
       ;;
+    *)
+      fail "System not detected."
   esac
-
 }
 
-# install_dotfiles
-run_setup_scripts
+install_zsh () {
+  info "checking for zsh..."
+  which zsh &>/dev/null
+  if [ ! "$?" == 0 ]; then
+    info "installing zsh..."
+    case $system in
+      Darwin)
+        which brew &>/dev/null
+        if [ "$?" == 0 ]; then
+          brew install zsh
+        else
+          fail "brew not installed."
+        fi
+        ;;
+      *)
+        ;;
+    esac
+  else
+    success "zsh is already installed!"
+  fi
+}
+
+install_dotfiles
+# install_packages
+# detect_system
+# install_zsh
+# run_setup_scripts
