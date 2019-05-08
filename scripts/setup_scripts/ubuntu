@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+echo "Hello from ubuntu setup script!"
+info "hello"
+exit

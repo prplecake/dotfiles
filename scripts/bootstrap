@@ -119,17 +119,34 @@ detect_system () {
   system=
   if [ "$(uname)" == "Darwin" ]; then
     system=Darwin
+  elif [ "$(uname)" == "Linux" ]; then
+    info "sourcing /etc/*release"
+    source /etc/*release
+    system=$DISTRIB_ID
+    
   fi
 
   success "System detected: $system"
 }
 
-install_packages () {
+run_setup_scripts () {
   info "installing packages"
 
   detect_system
-  info "$system"
+  case "$system" in
+    Darwin)
+      ;;
+    Ubuntu)
+      info "calling another script"
+      info "$(pwd)"
+      scripts/setup_scripts/ubuntu
+      info "other script finished"
+      ;;
+    *)
+      ;;
+  esac
+
 }
 
 # install_dotfiles
-install_packages
+run_setup_scripts
