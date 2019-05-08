@@ -113,4 +113,23 @@ install_dotfiles () {
   done
 }
 
-install_dotfiles
+detect_system () {
+  info "detecting system"
+
+  system=
+  if [ "$(uname)" == "Darwin" ]; then
+    system=Darwin
+  fi
+
+  success "System detected: $system"
+}
+
+install_packages () {
+  info "installing packages"
+
+  detect_system
+  info "$system"
+}
+
+# install_dotfiles
+install_packages
