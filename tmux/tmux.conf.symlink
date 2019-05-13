@@ -1,4 +1,3 @@
-set -g default-terminal "tmux"
 set -g mouse on
 bind -n C-x setw synchronize-panes
 # remap prefix to Control + a
