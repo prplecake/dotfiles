@@ -1,4 +1,4 @@
-set -g default-terminal $TERM
+set -g default-terminal "screen-256color-bce"
 set -g mouse on
 bind -n C-x setw synchronize-panes
 # remap prefix to Control + a
