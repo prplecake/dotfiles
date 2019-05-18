@@ -406,3 +406,5 @@ highlight markdownItalic gui=italic
 autocmd BufNewFile,BufRead * if empty(&filetype) | execute 'setlocal tw=80' | endif
 
 set nosmartindent
+set number
+
