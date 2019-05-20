@@ -1,0 +1,57 @@
+#   mutt configuration settings specific to fastmail using IMAP
+set from="matthew@jrgnsn.net"
+set realname="Matthew Jorgensen"
+
+set imap_check_subscribed
+set markers=no
+
+set sort='reverse-last-date-received'
+set edit_headers=yes
+set markers=no
+set index_format="%2C %Z %D %-17.17n %s"
+set pager_format="%S [%C/%m] %l %n: %s"
+set date_format="%Y-%m-%d %H:%M"
+
+############################################################
+# Mail/SMTP/IMAP Settings
+set my_imap_server=imap.fastmail.com
+set my_smtp_server=smtp.fastmail.com
+set my_user=matthew@jrgnsn.net
+set my_pass=$FASTMAIL_MUTT_PASS
+
+set header_cache=~/.mutt/hcache/fastmail-imap
+
+set imap_user=$my_user
+set imap_pass=$my_pass
+
+# SMTP server relay to
+# NOTE: to get this to work, I had to install the libsas12-modules package
+set smtp_url="smtp://$my_user:$my_pass@$my_smtp_server:587/"
+# You can also set smtp_pass if your password is so funky that `smtp_url`
+# gets confused:
+#   set smtp_pass=$my_pass
+#   set smtp_url="smtp://$my_user@$my_smtp_server:587/"
+# Or use msmtp:
+#   set sendmail="/usr/bin/msmtp --account=fastmail"
+
+# Slow down new mail checks over imap
+# See main muttrc for more details on this
+set mail_check=300
+set timeout=600
+
+############################################################
+# Folder Settings
+# 
+# Default location of mailboxes
+set folder=imaps://$my_imap_server/
+
+# Default inbox
+set spoolfile="="
+
+# Map folders correctly
+set record="=Sent"
+set postponed="=Drafts"
+
+############################################################
+# Macros
+macro index,pager ,a <save-message>=Archive\n
