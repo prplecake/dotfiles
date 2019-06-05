@@ -1,7 +1,6 @@
 [user]
 	name = Matthew Jorgensen
 	email = matthew@jrgnsn.net
-	singingkey = 3FD31425
 	signingkey = 921646C547D65FB2
 [core]
 	excludesfile = ~/.gitignore
