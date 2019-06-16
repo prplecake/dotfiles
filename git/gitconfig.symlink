@@ -38,7 +38,7 @@
 [ghi]
 	token = !security find-internet-password -a mattjorgs -s github.com -l 'ghi token' -w
 [commit]
-	gpgsign = false
+	gpgsign = true
 [gpg]
 	program = gpg
 [url "ssh://git@heroku.com/"]
