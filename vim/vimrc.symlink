@@ -408,3 +408,5 @@ autocmd BufNewFile,BufRead * if empty(&filetype) | execute 'setlocal tw=80' | en
 set nosmartindent
 set number
 
+autocmd FileType markdown setlocal spell spelllang=en_us
+autocmd FileType text setlocal spell spelllang=en_us
