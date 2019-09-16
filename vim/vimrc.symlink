@@ -397,13 +397,14 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 
-autocmd FileType asciidoc setlocal tw=80
-autocmd FileType text setlocal tw=80
-autocmd FileType markdown setlocal tw=80
-autocmd FileType rst setlocal tw=80
+autocmd FileType asciidoc setlocal tw=72
+autocmd FileType text setlocal tw=72
+autocmd FileType markdown setlocal tw=72
+autocmd FileType rst setlocal tw=72
 highlight markdownItalic gui=italic
 " for files that dont have a filetype...
-autocmd BufNewFile,BufRead * if empty(&filetype) | execute 'setlocal tw=80' | endif
+autocmd BufNewFile,BufRead * if empty(&filetype) | execute 'setlocal tw=72' | endif
+autocmd BufNewFile,BufRead *.md syntax match Comment /\%^---\_.\{-}---$/
 
 set nosmartindent
 set number
