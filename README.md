@@ -36,8 +36,6 @@ symlinked to `~/.zshrc`.
 [oh-my-zsh]: https://github.com/robbyrussell/oh-my-zsh
 [vim-fugitive]: https://github.com/tpope/vim-fugitive.git
 
-## Vim
-
 Add a new plugin:
 
 ```
@@ -45,7 +43,7 @@ Add a new plugin:
 git submodule add https://github.com/tpope/vim-fugitive.git vim/bundle/vim-fugitive
 ```
 
-Install plugins from submodules:
+Install submodule updates:
 
 ```
 git submodule update --init
