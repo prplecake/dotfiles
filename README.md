@@ -51,10 +51,15 @@ git submodule update --init
 
 ## Extras
 
-The `extras` directory contains additional configuration files that are not dotfiles:
+The `extras` directory contains additional configuration files that are
+not dotfiles:
 
-* `VibrantInk.itermcolors` is a color scheme for [iTerm2][it2] ([source][VIsource]).
-* On a new Mac, run `~/.dotfiles/extras/macos_defaults.sh` in the Terminal to change some silly defaults.
+* `VibrantInk.itermcolors` is a color scheme for [iTerm2][it2] 
+  ([source][VIsource]).
+* On a new Mac, run `~/.dotfiles/extras/macos_defaults.sh` in the
+  Terminal to change some silly defaults.
+* Includes a `Brewfile` for Homebrew on macOS, use it to install what
+  you normally like.
 
 [it2]: http://www.iterm2.com/
 [VIsource]: https://github.com/asanghi/vibrantinklion
