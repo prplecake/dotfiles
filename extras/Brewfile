@@ -14,7 +14,6 @@ brew "node"
 brew "postgresql", restart_service: true
 brew "rbenv-bundler"
 brew "ruby"
-brew "telnet"
 brew "thefuck"
 brew "tmux"
 brew "tree"
