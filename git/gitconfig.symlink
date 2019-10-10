@@ -7,7 +7,7 @@
 	ignorecase = false
 	pager = less -R
 	editor = vim
-	hooksPath = /Users/mjorgensen/.git/hooks
+	hooksPath = ~/.git/hooks
 [color]
 	status = auto
 	diff = auto
