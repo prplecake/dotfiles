@@ -11,6 +11,38 @@ set -e
 # set -x # Print commands and their arguments as they are executed.
 # set -v # Print shell input lines as they are read.
 
+USAGE="
+The bootstrap command creates links in your home directory \`~/\`
+to the files in the repo.
+
+OPTIONS:
+    --with-xdg
+        Symlinks files in \`~/.config\`. This will fail if that
+        directory doesn't exist.
+    -h, --help
+        Print this help.
+
+Additional information can be found at the repo homepage:
+    https://git.sr.ht/~mjorgensen/dorfiles
+"
+
+for i in "$@"
+do
+    case $i in
+        -h|--help)
+            echo "$USAGE"
+            exit
+            ;;
+        --with-xdg)
+            WITH_XDG=true
+            shift
+            ;;
+        *)
+
+        ;;
+    esac
+done
+
 echo ""
 
 source scripts/_helpers
@@ -181,7 +213,9 @@ install_zsh () {
 }
 
 install_dotfiles
-install_xdg_config_dir
+if [ "$WITH_XDG" = true ]; then
+    install_xdg_config_dir
+fi
 # install_packages
 # detect_system
 # install_zsh
