@@ -8,17 +8,10 @@ took some organizational tips from his repository as well as modeled my
 shell script after theirs.
 
 ## Install
-Clone this repo into `~/.dotfiles`:
 
 ```
-git clone https://git.sr.ht/~mjorgensen/dotfiles ~/.dotfiles
-```
-
-Then install the dotfiles:
-
-```
-cd ~/.dotfiles
-./scripts/bootstrap
+$ git clone https://git.sr.ht/~mjorgensen/dotfiles ~/.dotfiles
+$ ~/.dotfiles/scripts/bootstrap
 ```
 
 The shell script will ask what to do if the destination file already
@@ -27,6 +20,15 @@ have the option to overwrite all, skip all, or back all up.
 
 The dotfiles will be symlinks, e.g. `~/zsh/zshrc.symlink` will be
 symlinked to `~/.zshrc`.
+
+### XDG Config Files
+
+We can also track XDG config files. To link them, use this bootstrap
+command:
+
+```
+$ ~/.dotfiles/scripts/bootstrap --with-xdg
+```
 
 ## Currently Installed Submodules
 
@@ -58,8 +60,7 @@ not dotfiles:
   ([source][VIsource]).
 * On a new Mac, run `~/.dotfiles/extras/macos_defaults.sh` in the
   Terminal to change some silly defaults.
-* Includes a `Brewfile` for Homebrew on macOS, use it to install what
-  you normally like.
+* Includes a `Brewfile` for Homebrew on macOS.
 
 [it2]: http://www.iterm2.com/
 [VIsource]: https://github.com/asanghi/vibrantinklion
