@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#CURRENT_SHELL=$(ps -p $$|tail -n +2|awk '{print $4}')
+echo "Current shell is $SHELL ($0)"
+#echo "$CURRENT_SHELL"
+
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
 
