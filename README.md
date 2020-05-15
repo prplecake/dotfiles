@@ -1,5 +1,7 @@
 # matthew's dotfiles
 
+**Note: This README is severely out of date.**
+
 I used [henrik's dotfiles](https://github.com/henrik/dotfiles) as a
 guide for creating my own system. Then I decided that system wasn't
 working for me. So in May 2019, I rewrote most of it. The new system is
