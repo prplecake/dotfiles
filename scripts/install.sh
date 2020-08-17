@@ -6,7 +6,7 @@ source "$ROOTDIR/_helpers"
 
 # install tools
 if [[ "$OSTYPE" == linux-gnu* ]]; then
-	if [[ -x "/etc/debian_version" || -x "/etc/"]]
+	if [[ -x "/etc/debian_version" || -x "/etc/" ]]; then
 		confirm "Install Debian/Ubuntu packages?" && "$ROOTDIR/install/install-debian-ubuntu-pkgs.sh"
 	fi
 elif [[ "$OSTYPE" == darwin* ]]; then
