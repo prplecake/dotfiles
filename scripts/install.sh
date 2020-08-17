@@ -9,6 +9,7 @@ if [[ "$OSTYPE" == linux-gnu* ]]; then
 	if [[ -x "/etc/debian_version" || -x "/etc/" ]]; then
 		confirm "Install Debian/Ubuntu packages?" && "$ROOTDIR/install/install-debian-ubuntu-pkgs.sh"
 	fi
+	confirm "Set hostname?" 				&& "$ROOTDIR/install/install-set-hostname.sh"
 elif [[ "$OSTYPE" == darwin* ]]; then
 	confirm "Install Homebrew?"				&& "$ROOTDIR/install/install-homebrew.sh"
 	confirm "Install Homebrew packages?"	&& "$ROOTDIR/install/install-homebrew-packages.sh"
