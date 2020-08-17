@@ -1,0 +1,67 @@
+install_zsh () {
+  info "checking for zsh..."
+  which zsh &>/dev/null
+  if [ ! "$?" == 0 ]; then
+    info "installing zsh..."
+    case $system in
+      Darwin)
+        which brew &>/dev/null
+        if [ "$?" == 0 ]; then
+          brew install zsh
+        else
+          fail "brew not installed."
+        fi
+        ;;
+      *)
+        ;;
+    esac
+  else
+    success "zsh is already installed!"
+  fi
+}
+
+run_setup_scripts () {
+  info "installing packages"
+
+  while true
+  do
+    user "Continue running system-specific scripts? (Y/n)"
+    read -n 1 ans
+
+    case $ans in
+      [yY]* ) break;;
+      [nN]* ) exit;;
+      *) user "Answer please.";;
+    esac
+  done
+
+  case "$system" in
+    Darwin)
+      ;;
+    ubuntu)
+      info "calling another script"
+      info "$(pwd)"
+      scripts/setup_scripts/ubuntu
+      info "other script finished"
+      ;;
+    debian)
+      ;;
+    *)
+      fail "System not detected."
+  esac
+}
+
+detect_system () {
+  info "detecting system"
+
+  system=
+  if [ "$(uname)" == "Darwin" ]; then
+    system=Darwin
+  elif [ "$(uname)" == "Linux" ]; then
+    info "sourcing /etc/*release"
+    source /etc/*release
+    system=$ID
+  fi
+
+  success "System detected: $system"
+}
