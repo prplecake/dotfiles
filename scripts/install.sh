@@ -6,7 +6,9 @@ source "$ROOTDIR/_helpers"
 
 # install tools
 if [[ "$OSTYPE" == linux-gnu* ]]; then
-	continue
+	if [[ -x "/etc/debian_version" || -x "/etc/"]]
+		confirm "Install Debian/Ubuntu packages?" && "$ROOTDIR/install/install-debian-ubuntu-pkgs.sh"
+	fi
 elif [[ "$OSTYPE" == darwin* ]]; then
 	confirm "Install Homebrew?"				&& "$ROOTDIR/install/install-homebrew.sh"
 	confirm "Install Homebrew packages?"	&& "$ROOTDIR/install/install-homebrew-packages.sh"
