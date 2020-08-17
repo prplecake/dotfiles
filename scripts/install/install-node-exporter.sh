@@ -22,8 +22,9 @@ else
 	| cut -d : -f 2,3 \
 	| tr -d \" \
 	| xargs -I {} curl -L "{}" -o /tmp/node_exporter.tar.gz
-	tar xzvf /tmp/node_exporter.tar.gz -C /tmp/node_exporter
-	sudo cp /tmp/node_exporter/node_exporter /usr/local/bin/
+	mkdir -p /tmp/node_exporter
+	tar xzf /tmp/node_exporter.tar.gz -C /tmp/node_exporter
+	sudo cp $(find /tmp -type f -name 'node_exporter' 2>/dev/null) /usr/local/bin/
 	rm -rf /tmp/node_exporter
 	sudo rm /tmp/node_exporter.tar.gz
 fi
@@ -44,7 +45,7 @@ Restart=on-failure
 WantedBy=multi-user.target
 "
 
-echo "$node_exporter_service" | sudo tee /etc/systemd/system/node-exporter.service
+echo "$node_exporter_service" | sudo tee /etc/systemd/system/node-exporter.service >/dev/null
 sudo systemctl daemon-reload
 sudo systemctl enable node-exporter
 sudo systemctl start node-exporter
