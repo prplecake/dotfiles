@@ -10,6 +10,7 @@ if [[ "$OSTYPE" == linux-gnu* ]]; then
 		confirm "Install Debian/Ubuntu packages?" && "$ROOTDIR/install/install-debian-ubuntu-pkgs.sh"
 	fi
 	confirm "Set hostname?" 				&& "$ROOTDIR/install/install-set-hostname.sh"
+	confirm "Install node_exporter?"		&& "$ROOTDIR/install/install-node-exporter.sh"
 elif [[ "$OSTYPE" == darwin* ]]; then
 	confirm "Install Homebrew?"				&& "$ROOTDIR/install/install-homebrew.sh"
 	confirm "Install Homebrew packages?"	&& "$ROOTDIR/install/install-homebrew-packages.sh"
