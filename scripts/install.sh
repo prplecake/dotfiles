@@ -19,7 +19,7 @@ fi
 confirm "Set login shell?"	&& "$ROOTDIR/install/install-shell.sh"
 confirm "Create symlinks?"	&& "$ROOTDIR/install/install-symlinks.sh"
 
-if [[ -x "$ROOTDIR/install/set_hostname" ]]; then
+if [[ -e "$ROOTDIR/install/set_hostname" ]]; then
 	confirm "Hostname was changed. Reboot?" && reboot=1
 fi
 
