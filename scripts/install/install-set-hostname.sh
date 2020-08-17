@@ -17,9 +17,9 @@ while [ !$correct ]; do
 	if [[ $correct == 1 ]]; then break; else get_hostname; fi
 done
 
-sudo cat $hostname > /etc/hostname
+echo $hostname > sudo tee /etc/hostname
 # Backup hosts file just in case
 sudo mv /etc/hosts /etc/hosts.bak
-sudo sed "s/^127\.0\.0\.1.*$/127\.0\.0\.1	localhost	$hostname/" /etc/hosts > /etc/hosts
+sudo sed -i "s/^127\.0\.0\.1.*$/127\.0\.0\.1	localhost	$hostname/" /etc/hosts
 
 touch set_hostname
