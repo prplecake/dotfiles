@@ -7,7 +7,7 @@ ROOTDIR=$(cd "$(dirname "$0")/.." && pwd)
 source "$ROOTDIR/_helpers"
 
 echo "Installing apt packages..."
-sudo apt install \
+sudo apt install -y \
 	nginx \
 	python-certbot-nginx \
 	thefuck \
