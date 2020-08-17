@@ -25,6 +25,7 @@ else
 	| tr -d \" \
 	| xargs -I {} curl -L "{}" -o /tmp/gotop.tgz
 	sudo tar xzvf /tmp/gotop.tgz -C /usr/bin/
+	sudo rm /tmp/gotop.tgz
 fi
 
 confirm "Install Nginx?" && "$ROOTDIR/install/install-deb-nginx.sh"
