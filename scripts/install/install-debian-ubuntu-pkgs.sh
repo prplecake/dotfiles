@@ -23,4 +23,4 @@ curl -s https://api.github.com/repos/xxxserxxx/gotop/releases/latest \
 | xargs -I {} curl -L "{}" -o /tmp/gotop.tgz
 sudo tar xzvf /tmp/gotop.tgz -C /usr/bin/
 
-confirm_n "Install Nginx?" && "$ROOTDIR/scripts/install-deb-nginx.sh"
+confirm_n "Install Nginx?" && "$ROOTDIR/install-deb-nginx.sh"
