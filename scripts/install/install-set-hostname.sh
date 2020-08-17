@@ -17,9 +17,10 @@ while [ !$correct ]; do
 	if [[ $correct == 1 ]]; then break; else get_hostname; fi
 done
 
-echo $hostname > sudo tee /etc/hostname
+sudo hostname $hostname
+echo $hostname | sudo tee /etc/hostname
 # Backup hosts file just in case
 sudo cp /etc/hosts /etc/hosts.bak
 sudo sed -i "s/^127\.0\.0\.1.*$/127\.0\.0\.1	localhost	$hostname/" /etc/hosts
 
-touch set_hostname
+touch "$ROOTDIR/install/set_hostname"
