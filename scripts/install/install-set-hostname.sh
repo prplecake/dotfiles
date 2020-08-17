@@ -19,7 +19,7 @@ done
 
 echo $hostname > sudo tee /etc/hostname
 # Backup hosts file just in case
-sudo mv /etc/hosts /etc/hosts.bak
+sudo cp /etc/hosts /etc/hosts.bak
 sudo sed -i "s/^127\.0\.0\.1.*$/127\.0\.0\.1	localhost	$hostname/" /etc/hosts
 
 touch set_hostname

@@ -27,4 +27,4 @@ else
 	sudo tar xzvf /tmp/gotop.tgz -C /usr/bin/
 fi
 
-confirm_n "Install Nginx?" && "$ROOTDIR/install/install-deb-nginx.sh"
+confirm "Install Nginx?" && "$ROOTDIR/install/install-deb-nginx.sh"
