@@ -9,7 +9,6 @@ source "$ROOTDIR/_helpers"
 echo "==== Installing node_exporter... ===="
 
 if id "monitor" &>/dev/null; then
-	continue
 else
 	sudo useradd -m monitor
 fi
