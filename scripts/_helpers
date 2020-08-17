@@ -15,3 +15,31 @@ fail () {
   echo ''
   exit
 }
+
+confirm() {
+	local prompt="$1 [Y/n] "
+
+	while true; do
+		read -e -p "$prompt" yn
+		case "$yn" in
+			""		) return 0;;
+			[Yy]*	) return 0;;
+			[Nn]*	) return 1;;
+			*		) ;;
+		esac
+	done
+}
+
+confirm_n() {
+	local prompt="$1 [y/N] "
+
+	while true; do
+		read -e -p "$prompt" yn
+		case "$yn" in
+			""		) return 1;;
+			[Yy]*	) return 0;;
+			[Nn]*	) return 1;;
+			*		) ;;
+		esac
+	done
+}
