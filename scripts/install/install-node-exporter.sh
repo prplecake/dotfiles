@@ -22,7 +22,7 @@ else
 	| cut -d : -f 2,3 \
 	| tr -d \" \
 	| xargs -I {} curl -L "{}" -o /tmp/node_exporter.tar.gz
-	tar xzvf /tmp/gotop.tgz -C /tmp/node_exporter
+	tar xzvf /tmp/node_exporter.tar.gz -C /tmp/node_exporter
 	sudo cp /tmp/node_exporter/node_exporter /usr/local/bin/
 	rm -rf /tmp/node_exporter
 	sudo rm /tmp/node_exporter.tar.gz
