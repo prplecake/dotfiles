@@ -6,7 +6,7 @@ ROOTDIR=$(cd "$(dirname "$0")/.." && pwd)
 
 source "$ROOTDIR/_helpers"
 
-echo "Installing apt packages..."
+echo "==== Installing apt packages... ===="
 sudo apt install -y \
 	nginx \
 	python-certbot-nginx \
@@ -15,7 +15,7 @@ sudo apt install -y \
 	tree \
 	zsh
 
-echo "Installing gotop..."
+echo "==== Installing gotop... ===="
 if [[ -x /usr/bin/gotop ]]; then
 	echo "gotop is already installed."
 else
