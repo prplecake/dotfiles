@@ -8,6 +8,8 @@ source "$ROOTDIR/_helpers"
 
 echo "==== Installing apt packages... ===="
 sudo apt install -y \
+	apt-transport-https \
+	gnupg gnupg1 ggnupg2 \
 	nginx \
 	python-certbot-nginx \
 	thefuck \
