@@ -13,7 +13,7 @@ shell script after theirs.
 
 ```
 $ git clone https://git.sr.ht/~mjorgensen/dotfiles ~/.dotfiles
-$ ~/.dotfiles/scripts/bootstrap
+$ ~/.dotfiles/scripts/install.sh
 ```
 
 The shell script will ask what to do if the destination file already
@@ -25,12 +25,8 @@ symlinked to `~/.zshrc`.
 
 ### XDG Config Files
 
-We can also track XDG config files. To link them, use this bootstrap
-command:
-
-```
-$ ~/.dotfiles/scripts/bootstrap --with-xdg
-```
+We can also track XDG config files. You'll be asked if you want to link
+them.
 
 ## Currently Installed Submodules
 
