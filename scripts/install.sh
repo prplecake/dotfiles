@@ -18,3 +18,12 @@ fi
 # Extra steps
 confirm "Set login shell?"	&& "$ROOTDIR/install/install-shell.sh"
 confirm "Create symlinks?"	&& "$ROOTDIR/install/install-symlinks.sh"
+
+if [[ -x "$ROOTDIR/install/set_hostname" ]]; then
+	confirm "Hostname was changed. Reboot?" && reboot=1
+fi
+
+if [[ $reboot == 1 ]]; then
+	rm "$ROOTDIR/install/set_hostname"
+	sudo reboot
+fi

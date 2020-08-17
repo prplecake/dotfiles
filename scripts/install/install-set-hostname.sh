@@ -21,3 +21,5 @@ sudo cat $hostname > /etc/hostname
 # Backup hosts file just in case
 sudo mv /etc/hosts /etc/hosts.bak
 sudo sed "s/^127\.0\.0\.1.*$/127\.0\.0\.1	localhost	$hostname/" /etc/hosts > /etc/hosts
+
+touch set_hostname
