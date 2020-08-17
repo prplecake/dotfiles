@@ -28,4 +28,4 @@ else
 	sudo rm /tmp/gotop.tgz
 fi
 
-confirm "Install Nginx?" && "$ROOTDIR/install/install-deb-nginx.sh"
+confirm_n "Install Nginx?" && "$ROOTDIR/install/install-deb-nginx.sh"
