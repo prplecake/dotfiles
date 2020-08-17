@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "===== INSTALL HOMEBREW PACKAGES ====="
+echo "==== Setting hostname ===="
 
 ROOTDIR=$(cd "$(dirname "$0")/.." && pwd)
 
