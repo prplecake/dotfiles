@@ -7,7 +7,7 @@ ROOTDIR=$(cd "$(dirname "$0")/.." && pwd)
 source "$ROOTDIR/_helpers"
 
 echo "==== Installing apt packages... ===="
-sudo apt install -y \
+sudo apt install -y --ignore-missing \
 	apt-transport-https \
 	gnupg gnupg1 gnupg2 \
 	nginx \
