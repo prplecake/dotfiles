@@ -6,12 +6,17 @@ ROOTDIR=$(cd "$(dirname "$0")/.." && pwd)
 
 source "$ROOTDIR/_helpers"
 
+echo "==== Updating package information ===="
+sudo apt update
+
+echo "==== Upgrading apt packages ===="
+sudo apt upgrade -y
+
 echo "==== Installing apt packages... ===="
 sudo apt install -y --ignore-missing \
 	apt-transport-https \
 	gnupg gnupg1 gnupg2 \
-	nginx \
-	python-certbot-nginx \
+	python3-distutils \
 	thefuck \
 	tmux \
 	tree \
