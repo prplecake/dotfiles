@@ -16,6 +16,7 @@ echo "==== Installing apt packages... ===="
 sudo apt install -y --ignore-missing \
 	apt-transport-https \
 	gnupg gnupg1 gnupg2 \
+	net-tools \
 	python3-distutils \
 	thefuck \
 	tmux \
