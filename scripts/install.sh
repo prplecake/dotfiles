@@ -14,6 +14,7 @@ if [[ "$OSTYPE" == linux-gnu* ]]; then
 elif [[ "$OSTYPE" == darwin* ]]; then
 	confirm "Install Homebrew?"				&& "$ROOTDIR/install/install-homebrew.sh"
 	confirm "Install Homebrew packages?"	&& "$ROOTDIR/install/install-homebrew-packages.sh"
+	confirm "Install Sublime {Text,Merge} CLI helpers?" && "$ROOTDIR/install/install-macos-subl-smerge-helpers.sh"
 fi
 
 # Extra steps
