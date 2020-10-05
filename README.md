@@ -25,9 +25,9 @@ them.
 
 ### Customizations
 
-You can add custom functions in `$REPO/zsh/custom_functions.sh`. For
+You can add custom functions in `zsh/custom_functions.sh`. For
 organizational purposes, autocompletion setups are kept in
-`REPO/zsh/autocompletions.sh`.
+`zsh/autocompletions.sh`.
 
 ### Currently Installed Submodules
 
