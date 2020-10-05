@@ -1,14 +1,6 @@
 # matthew's dotfiles
 
-**Note: This README is severely out of date.**
-
-I used [henrik's dotfiles](https://github.com/henrik/dotfiles) as a
-guide for creating my own system. Then I decided that system wasn't
-working for me. So in May 2019, I rewrote most of it. The new system is
-closer to [holman's dotfiles](https://github.com/holman/dotfiles). I
-took some organizational tips from his repository as well as modeled my
-shell script after theirs. A more recent set of changes has been
-inspired by [Charles Gould](https://git.sr.ht/~crg/config).
+**Note: This README is undergoing revision.**
 
 ## Install
 
@@ -29,7 +21,15 @@ symlinked to `~/.zshrc`.
 We can also track XDG config files. You'll be asked if you want to link
 them.
 
-## Currently Installed Submodules
+## Zsh
+
+### Customizations
+
+You can add custom functions in `$REPO/zsh/custom_functions.sh`. For
+organizational purposes, autocompletion setups are kept in
+`REPO/zsh/autocompletions.sh`.
+
+### Currently Installed Submodules
 
 - [oh-my-zsh][oh-my-zsh] - `/oh-my-zsh`
 - [vim-fugitive][vim-fugitive] - `/vim/bundle/vim-fugitive`
@@ -63,3 +63,13 @@ not dotfiles:
 
 [it2]: http://www.iterm2.com/
 [VIsource]: https://github.com/asanghi/vibrantinklion
+
+## History 
+
+I used [henrik's dotfiles](https://github.com/henrik/dotfiles) as a
+guide for creating my own system. Then I decided that system wasn't
+working for me. So in May 2019, I rewrote most of it. The new system is
+closer to [holman's dotfiles](https://github.com/holman/dotfiles). I
+took some organizational tips from his repository as well as modeled my
+shell script after theirs. A more recent set of changes has been
+inspired by [Charles Gould](https://git.sr.ht/~crg/config).
