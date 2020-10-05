@@ -96,9 +96,3 @@ export LESS="--no-init --quit-if-one-screen"
 if [ -d "$HOME/.secrets" ]; then
     source ~/.secrets/env
 fi
-
-# Source customizations
-source ~/.dotfiles/zsh/custom_functions.sh
-
-# Source autocompletion setups
-source ~/.dotfiles/zsh/autocompletions.sh
