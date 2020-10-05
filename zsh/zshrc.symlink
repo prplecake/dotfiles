@@ -97,5 +97,9 @@ if [ -d "$HOME/.secrets" ]; then
     source ~/.secrets/env
 fi
 
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/mjorgensen/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+# Source customizations
+source ~/.dotfiles/zsh/custom_functions.sh
+source ~/.dotfiles/zsh/custom_miscellaneous.sh
+
+# Source autocompletion setups
+source ~/.dotfiles/zsh/autocompletions.sh
