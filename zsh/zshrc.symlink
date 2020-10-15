@@ -111,6 +111,6 @@ if [ ! -z ${TMUX+x} ]; then
 	unset SESSION_TYPE
 fi
 
-if [ "SESSION_TYPE" = "remote/ssh" ]; then
+if [ "$SESSION_TYPE" = "remote/ssh" ]; then
 	tmux attach
 fi
