@@ -3,4 +3,4 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/mjorgensen/Library/Caches/heroku/autocomplete/zs
 
 # mc autocomplete setup
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/local/bin/mc mc
+complete -o nospace -C /opt/local/bin/mc mc
