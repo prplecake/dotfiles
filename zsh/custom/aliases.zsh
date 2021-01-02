@@ -5,3 +5,4 @@ alias py=python3
 alias kb=keybase
 alias drs="py manage.py runserver"
 alias ydl=youtube-dl
+alias lime.="lime ."
