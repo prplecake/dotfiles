@@ -16,7 +16,6 @@ brew install \
 	dash \
 	diction \
 	font-go \
-	font-go-mono \
 	git \
 	gnupg \
 	go \
