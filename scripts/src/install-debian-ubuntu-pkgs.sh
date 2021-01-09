@@ -15,6 +15,7 @@ sudo apt upgrade -y
 echo "==== Installing apt packages... ===="
 sudo apt install -y --ignore-missing \
 	apt-transport-https \
+	curl \
 	gnupg gnupg1 gnupg2 \
 	net-tools \
 	python3-distutils \
