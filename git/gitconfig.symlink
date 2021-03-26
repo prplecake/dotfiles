@@ -34,7 +34,7 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [github]
-	user = mattjorgs
+	user = prplecake
 [ghi]
 	token = !security find-internet-password -a mattjorgs -s github.com -l 'ghi token' -w
 [url "ssh://git@heroku.com/"]
