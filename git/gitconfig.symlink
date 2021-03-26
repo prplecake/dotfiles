@@ -1,7 +1,7 @@
 [user]
 	name = Matthew Jorgensen
 	email = matthew@jrgnsn.net
-	signingkey = 921646C547D65FB2
+	signingkey = 5C3C6C19379A53AC
 [core]
 	excludesfile = ~/.gitignore
 	ignorecase = false
