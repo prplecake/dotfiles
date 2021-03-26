@@ -40,8 +40,8 @@
 [url "ssh://git@heroku.com/"]
 	insteadOf = https://git.heroku.com/
 [sendemail]
-    smtpServer = smtp.fastmail.com
-    smtpUser = matthew@jrgnsn.net
+    smtpServer = smtp.migadu.com
+    smtpUser = matthew_secretsenv@jrgnsn.net
     smtpEncryption = tls
     smtpServerPort = 587
-	confirm = auto
+    confirm = auto
