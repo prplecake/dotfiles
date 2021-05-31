@@ -45,3 +45,9 @@
     smtpEncryption = tls
     smtpServerPort = 587
     confirm = auto
+[init]
+	defaultBranch = master
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
