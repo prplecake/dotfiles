@@ -102,6 +102,12 @@ if [ -d "$SHELL_WATCHER_PATH" ]; then
     source "$SHELL_WATCHER_PATH/aw-watcher-shell"
 fi
 
+# Add macOS Python bin to PATH
+if [ -d "$HOME/Library/Python" ]; then
+    res=$(find "$HOME/Library/Python" -type d -name 'bin')
+    export PATH="$res:$PATH"
+fi
+
 # https://unix.stackexchange.com/questions/9605/how-can-i-detect-if-the-shell-is-controlled-from-ssh/9607#9607
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   SESSION_TYPE=remote/ssh
