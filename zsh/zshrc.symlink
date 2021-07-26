@@ -125,3 +125,7 @@ fi
 if [ "$SESSION_TYPE" = "remote/ssh" ]; then
 	tmux attach
 fi
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/mc mc
+export PATH="/usr/local/sbin:$PATH"
