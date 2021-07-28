@@ -102,6 +102,11 @@ if [ -d "$SHELL_WATCHER_PATH" ]; then
     source "$SHELL_WATCHER_PATH/aw-watcher-shell"
 fi
 
+if [ -d "$HOME/.asdf" ]; then
+    source "$HOME/.asdf/asdf.sh"
+    source "$HOME/.asdf/completions/asdf.bash"
+fi
+
 # macOS specific things here
 if [ "$(uname -s)" = "Darwin" ]; then
   # Add macOS Python bin to PATH
