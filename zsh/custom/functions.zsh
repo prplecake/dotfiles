@@ -6,3 +6,8 @@ lime () {
 	fi
 	return 1
 }
+
+clime () {
+	cd $1
+	lime $1
+}
