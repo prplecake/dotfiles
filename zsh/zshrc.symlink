@@ -114,6 +114,12 @@ if [ "$(uname -s)" = "Darwin" ]; then
       res=$(find "$HOME/Library/Python" -type d -name 'bin')
       export PATH="$res:$PATH"
   fi
+
+  # Add VS Code to PATH
+  vscodepath="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  if [ -d "$vscodepath" ]; then
+    export PATH="$PATH:$vscodepath"
+  fi
 elif [ "$(uname -s)" = "Linux" ]; then
   # Only runs on Linux systems
 fi
