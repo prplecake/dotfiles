@@ -6,3 +6,5 @@ alias kb=keybase
 alias drs="py manage.py runserver"
 alias ydl=youtube-dl
 alias lime.="lime ."
+
+unalias gof
