@@ -3,7 +3,7 @@
 ## Setup
 
 ```
-$ git clone --recursive https://git.sr.ht/~mjorgensen/dotfiles ~/.dotfiles
+$ git clone --recursive https://github.com/prplecake/dotfiles ~/.dotfiles
 $ ~/.dotfiles/scripts/install.sh
 ```
 
