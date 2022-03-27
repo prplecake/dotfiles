@@ -120,6 +120,12 @@ if [ "$(uname -s)" = "Darwin" ]; then
   if [ -d "$vscodepath" ]; then
     export PATH="$PATH:$vscodepath"
   fi
+
+  # Add UXN to PATH
+  if [ -d "$HOME/sources/uxn/bin" ]; then
+      uxn_bin_path="$HOME/sources/uxn/bin"
+      export PATH="$uxn_bin_path:$PATH"
+  fi
 elif [ "$(uname -s)" = "Linux" ]; then
   # Only runs on Linux systems
 fi
