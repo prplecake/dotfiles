@@ -51,3 +51,5 @@
 	gpgsign = true
 [gpg]
 	program = gpg
+[includeIf "gitdir:~/Projects/VeganMSP/"]
+    path = ~/Projects/VeganMSP/.gitconfig
