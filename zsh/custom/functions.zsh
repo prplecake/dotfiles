@@ -11,3 +11,8 @@ clime () {
 	cd $1
 	lime $1
 }
+
+curl-gitignore () {
+	lang=$1
+	curl -L https://raw.githubusercontent.com/github/gitignore/main/$lang.gitignore -o .gitignore
+}
