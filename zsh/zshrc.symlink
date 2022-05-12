@@ -163,3 +163,5 @@ complete -o nospace -C /usr/local/bin/mc mc
 export PATH="/usr/local/sbin:$PATH"
 # Add .NET Core SDK tools
 export PATH="$PATH:/Users/mjorgensen/.dotnet/tools"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
