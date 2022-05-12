@@ -158,8 +158,5 @@ fi
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/mc mc
 export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
 # Add .NET Core SDK tools
 export PATH="$PATH:/Users/mjorgensen/.dotnet/tools"
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
