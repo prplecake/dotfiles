@@ -16,3 +16,17 @@ curl-gitignore () {
 	lang=$1
 	curl -L https://raw.githubusercontent.com/github/gitignore/main/$lang.gitignore -o .gitignore
 }
+
+function getFinalRedirect {
+    local url=$1
+    while true; do
+        nextloc=$( curl -s -I $url | grep -i ^Location: )
+        if [ -n "$nextloc" ]; then
+            url=${nextloc##location: }
+        else
+            break
+        fi
+    done
+
+    echo $url
+}
