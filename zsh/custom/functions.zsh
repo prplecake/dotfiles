@@ -30,3 +30,7 @@ function getFinalRedirect {
 
     echo $url
 }
+
+fuckwebp () {
+    ffmpeg -i "$1.webp" "$1.png"
+}
