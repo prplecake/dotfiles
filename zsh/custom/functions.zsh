@@ -32,5 +32,11 @@ function getFinalRedirect {
 }
 
 fuckwebp () {
-    ffmpeg -i "$1.webp" "$1.png"
+    if [ -z "$1" -o -z "$2" ]; then
+        echo "missing arguments"
+        return 1
+    fi
+    file=$1
+    filename=$(echo $file | rev | cut -d. -f2- | rev)
+    ffmpeg -i "$file" "$filename.$2"
 }
