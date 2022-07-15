@@ -1,6 +1,6 @@
 [user]
-	name = Matthew Jorgensen
-	email = matthew@jrgnsn.net
+	name = prplecake
+	email = me@prplecake.com
 	signingkey = 5C3C6C19379A53AC
 [core]
 	excludesfile = ~/.gitignore
