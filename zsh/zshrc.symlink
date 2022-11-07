@@ -132,6 +132,10 @@ if [ "$(uname -s)" = "Darwin" ]; then
 
   # Probably won't be running Rails apps in prod on Darwin...
   export RAILS_ENV=development
+
+  # Add port bins
+  export PATH="/opt/local/libexec/gnubin:$PATH"
+  export PATH="/opt/local/lib/postgresql14/bin:$PATH"
 elif [ "$(uname -s)" = "Linux" ]; then
   # Only runs on Linux systems
 fi
