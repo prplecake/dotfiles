@@ -129,6 +129,9 @@ if [ "$(uname -s)" = "Darwin" ]; then
       uxn_bin_path="$HOME/sources/uxn/bin"
       export PATH="$uxn_bin_path:$PATH"
   fi
+
+  # Probably won't be running Rails apps in prod on Darwin...
+  export RAILS_ENV=development
 elif [ "$(uname -s)" = "Linux" ]; then
   # Only runs on Linux systems
 fi
