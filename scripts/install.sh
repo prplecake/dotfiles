@@ -18,7 +18,9 @@ elif [[ "$OSTYPE" == darwin* ]]; then
 fi
 
 # Update submodules
-cd $ROOTDIR/..; git submodule update --init; cd -
+(
+	cd $ROOTDIR/..; git submodule update --init
+)
 
 # Extra steps
 confirm "Set login shell?"	&& "$ROOTDIR/src/install-shell.sh"
