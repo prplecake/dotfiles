@@ -111,8 +111,8 @@ fi
 if [ "$(uname -s)" = "Darwin" ]; then
   # Add macOS Python bin to PATH
   if [ -d "$HOME/Library/Python" ]; then
-      res=$(find "$HOME/Library/Python" -type d -name 'bin')
-      export PATH="$res:$PATH"
+      res=$(find "$HOME/Library/Python" -type d -name 'bin' -print0 | cat -v | sed 's/\^@/:/g')
+      export PATH="$res$PATH"
   fi
   
   # Add /opt/local/bin to PATH
@@ -129,6 +129,13 @@ if [ "$(uname -s)" = "Darwin" ]; then
       uxn_bin_path="$HOME/sources/uxn/bin"
       export PATH="$uxn_bin_path:$PATH"
   fi
+
+  # Probably won't be running Rails apps in prod on Darwin...
+  export RAILS_ENV=development
+
+  # Add port bins
+  export PATH="/opt/local/libexec/gnubin:$PATH"
+  export PATH="/opt/local/lib/postgresql14/bin:$PATH"
 elif [ "$(uname -s)" = "Linux" ]; then
   # Only runs on Linux systems
 fi
@@ -163,5 +170,8 @@ complete -o nospace -C /usr/local/bin/mc mc
 export PATH="/usr/local/sbin:$PATH"
 # Add .NET Core SDK tools
 export PATH="$PATH:/Users/mjorgensen/.dotnet/tools"
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+
+if [ -d "$HOME/.rbenv/bin" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
