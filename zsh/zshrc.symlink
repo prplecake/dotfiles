@@ -111,8 +111,8 @@ fi
 if [ "$(uname -s)" = "Darwin" ]; then
   # Add macOS Python bin to PATH
   if [ -d "$HOME/Library/Python" ]; then
-      res=$(find "$HOME/Library/Python" -type d -name 'bin')
-      export PATH="$res:$PATH"
+      res=$(find "$HOME/Library/Python" -type d -name 'bin' -print0 | cat -v | sed 's/\^@/:/g')
+      export PATH="$res$PATH"
   fi
   
   # Add /opt/local/bin to PATH
