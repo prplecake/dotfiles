@@ -8,6 +8,7 @@
 	pager = less -R
 	editor = vim
 	hooksPath = ~/.git/hooks
+	autocrlf = input
 [color]
 	status = auto
 	diff = auto
