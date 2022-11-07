@@ -40,3 +40,28 @@ fuckwebp () {
     filename=$(echo $file | rev | cut -d. -f2- | rev)
     ffmpeg -i "$file" "$filename.$2"
 }
+
+ttm () {
+    if [ -z "$1" ]; then
+        echo "missing -f or -u flag"
+        return 1
+    fi
+    case $1 in
+    "-f")
+        if [ -z "$2" ]; then
+            echo "missing filename"
+            return 1
+        fi
+        ecxo "size: $(stat -c %s $2)"
+        payload="file=$2"
+        ;;
+    "-u")
+        if [ -z "$2" ]; then
+            echo "missing url"
+            return 1
+        fi
+        payload="url=$2"
+        ;;
+    esac
+    curl -F"$payload" https://ttm.sh | pbcopy
+}
