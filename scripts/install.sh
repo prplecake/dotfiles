@@ -17,6 +17,9 @@ elif [[ "$OSTYPE" == darwin* ]]; then
 	confirm "Install Sublime {Text,Merge} CLI helpers?" && "$ROOTDIR/src/install-macos-subl-smerge-helpers.sh"
 fi
 
+# Update submodules
+cd $ROOTDIR/..; git submodule update --init; cd -
+
 # Extra steps
 confirm "Set login shell?"	&& "$ROOTDIR/src/install-shell.sh"
 confirm "Create symlinks?"	&& "$ROOTDIR/src/install-symlinks.sh"
