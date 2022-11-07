@@ -97,11 +97,6 @@ if [ -d "$HOME/.secrets" ]; then
     source ~/.secrets/env
 fi
 
-SHELL_WATCHER_PATH=~/Projects/ActivityWatch/aw-watcher-shell
-if [ -d "$SHELL_WATCHER_PATH" ]; then
-    source "$SHELL_WATCHER_PATH/aw-watcher-shell"
-fi
-
 if [ -d "$HOME/.asdf" ]; then
     source "$HOME/.asdf/asdf.sh"
     source "$HOME/.asdf/completions/asdf.bash"
