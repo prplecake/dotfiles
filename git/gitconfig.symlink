@@ -58,3 +58,5 @@
 	allowedSignersFile = /Users/mjorgensen/.ssh/allowed_signers
 [includeIf "gitdir:~/Projects/VeganMSP/"]
     path = ~/Projects/VeganMSP/.gitconfig
+[includeIf "gitdir:~/Projects/PerpendicularTech/"]
+    path = ~/Projects/PerpendicularTech/.gitconfig
