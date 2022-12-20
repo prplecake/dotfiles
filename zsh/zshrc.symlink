@@ -109,9 +109,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
       res=$(find "$HOME/Library/Python" -type d -name 'bin' -print0 | cat -v | sed 's/\^@/:/g')
       export PATH="$res$PATH"
   fi
-  
-  # Add /opt/local/bin to PATH
-  export PATH="/opt/local/bin:$PATH"
 
   # Add VS Code to PATH
   vscodepath="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
