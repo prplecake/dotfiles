@@ -1,7 +1,7 @@
 [user]
 	name = prplecake
 	email = me@prplecake.com
-	signingkey = 5C3C6C19379A53AC
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOljto4soKCvEgNCMiLNN8HSNouI0ZcxCANDPCkFv4Pb
 [core]
 	excludesfile = ~/.gitignore
 	ignorecase = false
@@ -51,6 +51,9 @@
 [commit]
 	gpgsign = true
 [gpg]
-	program = gpg
+	format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+	allowedSignersFile = /Users/mjorgensen/.ssh/allowed_signers
 [includeIf "gitdir:~/Projects/VeganMSP/"]
     path = ~/Projects/VeganMSP/.gitconfig
