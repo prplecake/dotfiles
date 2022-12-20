@@ -22,6 +22,7 @@
 	private = yes
 [merge]
 	tool = vimdiff
+	conflictstyle = diff3
 [mergetool "vimdiff"]
 	cmd = vim -d "$LOCAL" "$MERGED" "$REMOTE"
     trustExitCode = true
