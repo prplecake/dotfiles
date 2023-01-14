@@ -28,8 +28,17 @@ echo "==== Installing gotop... ===="
 if [[ -x /usr/bin/gotop ]]; then
 	echo "gotop is already installed."
 else
+	system_arch=$(uname -m)
+	case $system_arch in
+		aarch64)
+			arch=arm64
+		;;
+		x86_64)
+			arch=amd64
+		;;
+	esac
 	curl -s https://api.github.com/repos/xxxserxxx/gotop/releases/latest \
-	| grep "browser_download_url.*linux_amd64" \
+	| grep "browser_download_url.*linux_$arch" \
 	| cut -d : -f 2,3 \
 	| tr -d \" \
 	| xargs -I {} curl -L "{}" -o /tmp/gotop.tgz
