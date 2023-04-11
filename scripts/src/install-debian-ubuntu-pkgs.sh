@@ -33,10 +33,14 @@ else
 		aarch64)
 			arch=arm64
 		;;
+		armv6l)
+			arch=arm6
+		;;
 		x86_64)
 			arch=amd64
 		;;
 	esac
+	echo "downloading gotop for $arch"
 	curl -s https://api.github.com/repos/xxxserxxx/gotop/releases/latest \
 	| grep "browser_download_url.*linux_$arch" \
 	| cut -d : -f 2,3 \
