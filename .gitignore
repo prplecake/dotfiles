@@ -3,3 +3,4 @@ testing/*
 *.netrwhist
 
 docs/_build/*
+set_hostname
