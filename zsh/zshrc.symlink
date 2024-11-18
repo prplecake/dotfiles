@@ -161,7 +161,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/mc mc
 export PATH="/usr/local/sbin:$PATH"
 # Add .NET Core SDK tools
-export PATH="$PATH:/Users/mjorgensen/.dotnet/tools"
+export PATH="$PATH:/Users/prplecake/.dotnet/tools"
 
 if [ -d "$HOME/.rbenv" ]; then
   export PATH="$PATH:$HOME/.rbenv/bin"
