@@ -4,7 +4,7 @@ alias py2=python
 alias py=python3
 alias kb=keybase
 alias drs="py manage.py runserver"
-alias ydl=youtube-dl
+alias ydl=yt-dlp
 alias lime.="lime ."
 
 unalias gof
