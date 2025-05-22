@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -e
+
+org="$1"
+shift
+
+for repo in "$@"
+do
+  git clone git@github.com:$org/$repo /tmp/$repo
+
+  cd /tmp/$repo
+
+  for branch in $(git branch --all | grep '^\s*remotes' | egrep --invert-match '(:?HEAD|master)$'); do
+	  git branch --track "${branch##*/}" "$branch"
+  done
+
+  git remote add codeberg git@codeberg.org:$org/$repo
+
+  git push codeberg --all
+  git push codeberg --tags
+
+  #xdg-open "https://git.sr.ht/~prplecake/$repo/settings/info"
+done
+
