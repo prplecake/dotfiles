@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+for repo in "$@"
+do
+  git clone git@github.com:prplecake/$repo /tmp/$repo
+
+  cd /tmp/$repo
+
+  for branch in $(git branch --all | grep '^\s*remotes' | egrep --invert-match '(:?HEAD|master)$'); do
+	  git branch --track "${branch##*/}" "$branch"
+  done
+
+  git remote add sourcehut git@git.sr.ht:~prplecake/$repo
+
+  git push sourcehut --all
+  git push sourcehut --tags
+
+  xdg-open "https://git.sr.ht/~prplecake/$repo/settings/info"
+done
+
