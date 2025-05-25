@@ -55,6 +55,7 @@ plugins=(git golang nmap)
 
 source $ZSH/oh-my-zsh.sh
 
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -84,13 +85,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"export PATH="/usr/local/sbin:$PATH"
 
-export ruby_home="$HOME/.gem/ruby/2.6.0"
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$ruby_home/bin:$PATH"
-export VISUAL=vim
-export EDITOR=$VISUAL
-eval $(thefuck --alias)
-export GPG_TTY=$(tty)
 export LESS="--no-init --quit-if-one-screen"
 
 if [ -d "$HOME/.secrets" ]; then
@@ -113,21 +107,18 @@ if [ "$(uname -s)" = "Darwin" ]; then
   # Add VS Code to PATH
   vscodepath="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
   if [ -d "$vscodepath" ]; then
-    export PATH="$PATH:$vscodepath"
+    export PATH="$vscodepath:$PATH"
   fi
 
   # Add UXN to PATH
   if [ -d "$HOME/sources/uxn/bin" ]; then
       uxn_bin_path="$HOME/sources/uxn/bin"
-      export PATH="$PATH:$uxn_bin_path"
+      export PATH="$uxn_bin_path:$PATH"
   fi
 
   # Probably won't be running Rails apps in prod on Darwin...
   export RAILS_ENV=development
 
-  # Add port bins
-  export PATH="/opt/local/libexec/gnubin:$PATH"
-  export PATH="$PATH:/opt/local/lib/postgresql14/bin"
 elif [ "$(uname -s)" = "Linux" ]; then
   # Only runs on Linux systems
 fi
@@ -161,12 +152,14 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/mc mc
 export PATH="/usr/local/sbin:$PATH"
 # Add .NET Core SDK tools
-export PATH="$PATH:/Users/prplecake/.dotnet/tools"
+export PATH="/Users/prplecake/.dotnet/tools:$PATH"
 
 if [ -d "$HOME/.rbenv" ]; then
-  export PATH="$PATH:$HOME/.rbenv/bin"
+  export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH";
