@@ -6,5 +6,6 @@ alias kb=keybase
 alias drs="py manage.py runserver"
 alias ydl=yt-dlp
 alias lime.="lime ."
+alias vim="nvim"
 
 unalias gof
