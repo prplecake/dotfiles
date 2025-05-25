@@ -1,5 +1,7 @@
 # matthew's dotfiles
 
+[Tracker](https://todo.sr.ht/~prplecake/dotfiles)
+
 ## Setup
 
 ```
