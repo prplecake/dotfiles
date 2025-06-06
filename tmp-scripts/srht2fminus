@@ -9,7 +9,10 @@ set -e
 
 for repo in "$@"
 do
-  git clone git@github.com:prplecake/$repo /tmp/$repo
+  if [ -e "/tmp/$repo" ]; then
+    rm -rf "/tmp/$repo"
+  fi
+  git clone git@git.sr.ht:~prplecake/$repo /tmp/$repo
 
   cd /tmp/$repo
 
@@ -17,11 +20,11 @@ do
 	  git branch --track "${branch##*/}" "$branch"
   done
 
-  git remote add sourcehut git@git.sr.ht:~prplecake/$repo
+  git remote add fminus git@git.fminus.co:prplecake/$repo
 
-  git push sourcehut --all
-  git push sourcehut --tags
+  git push fminus --all
+  git push fminus --tags
 
-  $open_cmd "https://git.sr.ht/~prplecake/$repo/settings/info"
+  $open_cmd "https://git.fminus.co/prplecake/$repo/settings"
 done
 
