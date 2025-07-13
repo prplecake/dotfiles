@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+open_cmd="$(which xdg-open)"
+if [ "$(uname -s)" = "Darwin" ]; then
+	open_cmd="$(which open)"
+fi
+
+set -e
+
+for repo in "$@"
+do
+  set +e
+  gh repo view $repo > /dev/null
+  if [ $? -eq 0 ]; then
+    continue
+  fi
+  set -e
+  if [ -e "/tmp/$repo" ]; then
+    rm -rf "/tmp/$repo"
+  fi
+  git clone git@git.fminus.co:prplecake/$repo /tmp/$repo
+
+  cd /tmp/$repo
+
+  for branch in $(git branch --all | grep '^\s*remotes' | egrep --invert-match '(:?HEAD|master)$'); do
+    git branch --track "${branch##*/}" "$branch"
+  done
+
+  git remote add github git@github.com:prplecake/$repo
+
+  gh repo create $repo --public --disable-wiki
+
+
+  git push github --all
+  git push github --tags
+
+  $open_cmd "https://github.com/prplecake/$repo/settings"
+done
+
