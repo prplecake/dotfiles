@@ -6,3 +6,6 @@
 	path = oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 	branch = master
+[submodule "/Users/prplecake/.dotfiles/zsh/custom/plugins/zsh-autosuggestions"]
+	path = /Users/prplecake/.dotfiles/zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions

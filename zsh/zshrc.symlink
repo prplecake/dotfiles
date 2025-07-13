@@ -51,7 +51,14 @@ ZSH_CUSTOM=$HOME/.dotfiles/zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git golang nmap)
+plugins=(
+	git 
+	golang 
+	nmap
+	zsh-autosuggestions
+)
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#d0d0d0"
 
 source $ZSH/oh-my-zsh.sh
 
